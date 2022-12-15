@@ -7,14 +7,14 @@ import {
     Stack,
     Collapse,
     Icon,
-    // Link,
-    Image,
+    Link,
     Popover,
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
+    Image
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -22,9 +22,8 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  import {Link,NavLink} from "react-router-dom"
-
-  export default function Navbar() {
+  
+  export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
@@ -37,7 +36,6 @@ import {
           px={{ base: 4 }}
           borderBottom={1}
           borderStyle={'solid'}
-          // justifyContent="space-around"
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
           <Flex
@@ -54,19 +52,23 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-           
+            <Text
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              color={useColorModeValue('gray.800', 'white')}>
+              Logo
+            </Text>
   
-            <Flex display={{ base: 'none', md: 'flex' }} ml={10} >
+            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
           </Flex>
-         
+  
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
-            spacing={6} mr={"35px"} >
-            
+            spacing={6}>
             <Button
               as={'a'}
               fontSize={'sm'}
@@ -87,9 +89,7 @@ import {
               }}>
               Sign Up
             </Button>
-           
           </Stack>
-       
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
@@ -112,7 +112,7 @@ import {
               <PopoverTrigger>
                 <Link
                   p={2}
-                  to={navItem.href ?? '#'}
+                  href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
                   color={linkColor}
@@ -132,13 +132,30 @@ import {
                   p={4}
                   rounded={'xl'}
                   minW={'sm'}>
-                  <Stack>
+                  <Stack display={'flex'} flexDirection='row'>
                     {navItem.children.map((child) => (
-                      <DesktopSubNav key={child.label} {...child} />
+                        <>
+                         <DesktopSubNav key={child.label} {...child} />
+                        </>
+                     
                     ))}
                   </Stack>
                 </PopoverContent>
               )}
+
+<PopoverContent
+                  border={0}
+                  boxShadow={'xl'}
+                  bg={popoverContentBgColor}
+                  p={4}
+                  rounded={'xl'}
+                  ml={"180px"}
+                  minW={'sm'}>
+                  <Stack display={'flex'} flexDirection='row'>
+                   <Image src={`https://img.mytheresa.com/media/static/raw/cms/l/WW_HP_2022_CW50/WW_FLYOUTS/Cruise23_Flyout_Long_batch_01_2x_20221212121008.jpg`} />
+                  </Stack>
+                </PopoverContent>
+
             </Popover>
           </Box>
         ))}
@@ -146,7 +163,7 @@ import {
     );
   };
   
-  const DesktopSubNav = ({ label, href, subLabel }) => {
+  const DesktopSubNav = ({ label, href, subLabel ,url }) => {
     return (
       <Link
         href={href}
@@ -163,10 +180,10 @@ import {
               fontWeight={500}>
               {label}
             </Text>
-            <Text fontSize={'sm'}>{subLabel}</Text>
-
+            <Text fontSize={'sm'}>{subLabel.map((el)=><li>{el}</li>)}</Text>
+            
           </Box>
-
+         
           <Flex
             transition={'all .3s ease'}
             transform={'translateX(-10px)'}
@@ -235,31 +252,60 @@ import {
             align={'start'}>
             {children &&
               children.map((child) => (
-              <NavLink border="5px solid red" key={child.label} py={2} to={child.href} > {child.label} </NavLink>
+                <Link key={child.label} py={2} href={child.href}>
+                  {child.label}
+                </Link>
               ))}
           </Stack>
         </Collapse>
       </Stack>
     );
   };
-
+ 
   
   const NAV_ITEMS = [
     {
-      label: 'WOMEN',
-      href:"/",
-      
+      label: 'New  Arrivals',
+      children: [
+        {
+          label: 'Just-In',
+          subLabel: ['Trending Design to inspire you','Trending Design to inspire you','Trending Design to inspire you','Trending Design to inspire you'],
+          href: '#',
+        },
+        {
+          label: 'Discover',
+          subLabel: ['Trending Design to inspire you','Trending Design to inspire you','Trending Design to inspire you','Trending Design to inspire you'],
+          href: '#',
+        },
+        // {
+        //     url:'https://img.mytheresa.com/media/static/raw/cms/l/WW_HP_2022_CW50/WW_FLYOUTS/Cruise23_Flyout_Long_batch_01_2x_20221212121008.jpg'
+        // }
+      ],
+    
     },
     {
-      label: 'MEN',
-     href:"/man"
+      label: 'Find Work',
+      children: [
+        {
+          label: 'Job Board',
+          subLabel: ['Trending Design to inspire you','Trending Design to inspire you','Trending Design to inspire you','Trending Design to inspire you'],
+          href: '#',
+        },
+        {
+          label: 'Freelance Projects',
+          subLabel:['Trending Design to inspire you','Trending Design to inspire you','Trending Design to inspire you','Trending Design to inspire you'],
+          href: '#',
+        },
+      ],
+    //   url:'https://img.mytheresa.com/media/static/raw/cms/l/WW_HP_2022_CW50/WW_FLYOUTS/Cruise23_Flyout_Long_batch_01_2x_20221212121008.jpg'
+
     },
-    {
-      label: 'KIDS',
-      href: '/kids',
-    },
-    {
-      label: 'LIFE',
-      href: '/life',
-    },
+//     {
+//       label: 'Learn Design',
+//       href: '#',
+//     },
+//     {
+//       label: 'Hire Designers',
+//       href: '#',
+//     },
   ];
