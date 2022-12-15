@@ -1,4 +1,4 @@
-import {Box, Center,Text} from "@chakra-ui/react"
+import {Box, Center,Text,Button} from "@chakra-ui/react"
 
 
 
@@ -16,8 +16,9 @@ return(
 
 
 >
-<Text fontFamily="Futura-Medium, Century Gothic, Gill Sans, Helvetica, Arial, sans-serif" mt="100px" color={"white"} fontWeight="400" fontSize="16px">YOUR NEW OUTLOOK</Text>
-
+<Text fontFamily="Futura-Medium, Century Gothic, Gill Sans, Helvetica, Arial, sans-serif" mt="320px" color={"white"} fontWeight="400" fontSize="20px">YOUR NEW OUTLOOK</Text>
+<Text fontFamily="Futura-Medium, Century Gothic, Gill Sans, Helvetica, Arial, sans-serif"fontSize="54px" lineHeight="65px" fontWeight="500" color="white" letter-spacing= '-.9px'>Cruise 2023</Text>
+<Button mt="20px">SHOP NOW </Button>
 </Box>
  
   

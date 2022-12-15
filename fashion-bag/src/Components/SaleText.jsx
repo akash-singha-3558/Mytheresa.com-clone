@@ -9,7 +9,7 @@ const {saleText}=useContext(AuthContext);
 
 return(
 
-<p style={{color:"#fc1000",fontFamily:"Futura-Medium,Century Gothic, Gill Sans, Helvetica, Arial, sans-serif"}}>{saleText}</p>
+<p style={{color:"#fc1000",fontFamily:"Futura-Medium,Century Gothic, Gill Sans, Helvetica, Arial, sans-serif",marginTop:"10px"}}>{saleText}</p>
 
 )
 
