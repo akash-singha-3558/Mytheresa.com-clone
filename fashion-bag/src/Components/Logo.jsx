@@ -1,10 +1,25 @@
 import logo from "../FashionBag2.png"
 import {SlHandbag } from "react-icons/sl";
-import { Center } from "@chakra-ui/react";
+import { Center, color } from "@chakra-ui/react";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
+import { Tooltip } from '@chakra-ui/react';
+import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverBody,
+    PopoverFooter,
+    PopoverArrow,
+    PopoverCloseButton,
+    PopoverAnchor,
+    Button
+  } from '@chakra-ui/react';
+import {Flex,Text,Box,Image} from "@chakra-ui/react";
+ 
 const Logo=()=>{
- const {cartcount}=useContext(AuthContext);
+ const {cartcount,isAuth}=useContext(AuthContext);
 const style={
     display:"flex",
     alignItems:"center",
@@ -12,39 +27,56 @@ const style={
     margin:"auto",
     height:"auto",
     width:"95%",
-   border:"1px solid tomato"
+  //  border:"1px solid tomato"
 }
 const div1={
     border:"1px solid yellow",width:"60%",display:"flex",justifyContent:"flex-end",height:"129.06px"
 
 }
-const div2={
-    border:"solid green",
-    width:"40%" ,
-    height:"129.06px",
-    display:"flex",
-    justifyContent:"flex-end",
-    alignItems:"center"
-}
+
 const counter={
     position: 'absolute',
-    top: '119px',
+    top: '140px',
     left: '94.74%',
     paddingLeft: '9px',
     fontSize: '13px',
     fontWeight: '400'
 }
 return(
-    <div style={style}>
-        <div style={div1}>
-    <img  src={logo} style={{width:"350px",border:"1px solid green",}} alt="FB"/>
-    </div>
-    <div style={div2}>
-      <p>SHOPPING BAG</p>
+    <Flex w="95%" m="auto" mt="5">
+        <Box /* border="1px solid yellow"*/ width={{base:"100%",sm:"100%",md:"100%", lg: '60%',
+    xl: '60%','2xl': '60%'}} display="flex" justifyContent={{base:"center",sm:"center",md:"center", lg: 'flex-end',
+    xl: 'flex-end','2xl': 'flex-end'}} height="129.06px" >
+    <Image  src={logo} style={{width:"350px"}} alt="FB"/>
+    </Box>
+
+    <Box  /* border="solid green"*/
+    width="40%"
+    height="129.06px"
+    justifyContent="flex-end"
+    alignItems="center"
+    display={{base:"none",sm:"none",md:"none", lg: 'flex',
+    xl: 'flex','2xl': 'flex'}}>
+  
+      <Tooltip label={!isAuth?`Your Cart Have ${cartcount} Items,
+       You have to LogIn to add Item`:`Your Cart Have ${cartcount} Items`} placement='bottom-start' bg={"white"}color={"black"} padding="10" borderRadius="10" boxShadow={"1px 2px 9px #dbdbdb"}>
+      <Text>SHOPPING BAG</Text>
+    </Tooltip>
+   
       <SlHandbag style={{fontSize:"50px",marginTop:"-10px"}}/>
-    <p style={counter}>{cartcount}</p>
-    </div>
-    </div>
+      
+    <Text position= 'absolute'
+    top= '140px'
+    left={{lg: '93.5%',
+    xl: '95%','2xl': '94.74%'}}
+    paddingLeft='9px'
+    fontSize='13px'
+    fontWeight='400' >{cartcount}</Text>
+    </Box>
+
+
+
+    </Flex>
 )
 
 }
