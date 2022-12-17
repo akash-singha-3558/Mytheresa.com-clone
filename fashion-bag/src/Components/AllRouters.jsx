@@ -1,7 +1,7 @@
 import {Routes,Route} from "react-router-dom";
 import Women from "./Womens/Women";
 import Kids from "./Kids";
-import Man from "./Man";
+import Man from "./Mans/Man";
 import Life from "./Life";
 
 const AllRoutes=()=>{
