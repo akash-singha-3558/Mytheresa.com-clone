@@ -49,7 +49,10 @@ return(
         <Box /* border="1px solid yellow"*/ width={{base:"100%",sm:"100%",md:"100%", lg: '60%',
     xl: '60%','2xl': '60%'}} display="flex" justifyContent={{base:"center",sm:"center",md:"center", lg: 'flex-end',
     xl: 'flex-end','2xl': 'flex-end'}} height="129.06px" >
-    <Image  src={logo} style={{width:"350px"}} alt="FB"/>
+    <Image onClick={()=>{
+      navigate("/");
+
+    }} cursor="pointer" src={logo} style={{width:"350px"}} alt="FB"/>
     </Box>
 
     <Box  /* border="solid green"*/

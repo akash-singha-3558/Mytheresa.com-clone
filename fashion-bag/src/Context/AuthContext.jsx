@@ -2,9 +2,12 @@ import {createContext,useState} from "react";
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import { SiToptal } from "react-icons/si";
+import { useToast } from '@chakra-ui/react'
 export const AuthContext=createContext();
 
 const AuthContextProvider=({children})=>{
+
+  const toast = useToast();
   const[total,setTotal]=useState(0);
 const [cartcount,setCartCount]=useState(0);
 const[cartData,setCartData]=useState(0);
@@ -26,7 +29,7 @@ const SendSignUpData=(form)=>{
        .then(function (response) {
          console.log(response,"hi");
          setIsAuth(true);
-         
+       
        })
        .catch(function (error) {
          console.log(error);
@@ -44,11 +47,17 @@ const CheckLogIn=async (Data)=>{
     for(let i=0;i<data.length;i++)
     {
       if(data[i].email==Data.email && data[i].password==Data.password){
-        setUserName(Data.email);
+        setUserName(data[i].firstname);
          setIsAuth(true);
          CartCounter();
          navigate("/");
-
+         
+         toast({
+          position:"top",
+          title: `Log In Successful`,
+          status: "success",
+          isClosable: true,
+        })
          return true;
 
       }
@@ -71,6 +80,12 @@ const CheckLogIn=async (Data)=>{
 
 const LogOut=()=>{
     setIsAuth(false);
+    toast({
+      position:"top",
+      title: `Logout Successful`,
+      status: "success",
+      isClosable: true,
+    })
 }
 
 
@@ -81,7 +96,13 @@ const AddToCart=(formdata)=>{
    })
    .then(function (response) {
      console.log(response);
-     
+     toast({
+      position:"top",
+      title: `Your Product has been added to the cart`,
+      status: "info",
+      isClosable: true,
+    })
+
      
    })
    .catch(function (error) {
@@ -128,8 +149,52 @@ const DeleteCart=(id)=>{
 CartCounter();
 }
 
+const AdminLogIn=async (obj)=>{
+  try {
+    const response = await axios.get('https://thankful-loafers-hare.cyclic.app/admin');
+    console.log(response.data[0].email);
+   for(let i=0;i<response.data.length;i++){
+    if(response.data[i].email==obj.email && response.data[i].password==obj.password ){
+      setIsAuth(true);
+      setUserName(response.data[i].firstname);
+      toast({
+        position:"top",
+        title: `Log In Successful`,
+        status: "success",
+        isClosable: true,
+      })
+      navigate("/");
+      return true;
+    }
+    else{
+      toast({
+        position:"top",
+        title: `Wrong Credentials`,
+        status: "error",
+        isClosable: true,
+      })
+     
+     return false;
+    }
+   }
+  } catch (error) {
+    console.error(error);
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
 return(
-<AuthContext.Provider value={{cartcount,isAuth,saleText,SendSignUpData,LogOut,CheckLogIn,username,AddToCart,total,cartData,DeleteCart,CartCounter}}>
+<AuthContext.Provider value={{cartcount,isAuth,saleText,SendSignUpData,LogOut,CheckLogIn,username,AddToCart,total,cartData,DeleteCart,CartCounter,AdminLogIn}}>
 
 {children}
 

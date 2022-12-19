@@ -16,7 +16,7 @@ return(
   xl: 'flex',
   '2xl': 'flex',}} justifyContent={"space-around"} alignItems="center" mt="20"  width={"100%"} m={"auto"}>
 <Box display="flex" justifyContent="space-around"   width={"79%"} >
-<span style={font}> <Tooltip label="hi" aria-label='A tooltip' padding={"10"}>
+<span style={font}> <Tooltip >
 NEW ARRIVALS
 </Tooltip></span>
 <span style={font}>DESIGNERS</span>

@@ -40,6 +40,9 @@ import {
           px={{ base: 4 }}
           borderBottom={1}
           borderStyle={'solid'}
+         
+          
+          
           // justifyContent="space-around"
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
@@ -106,7 +109,7 @@ import {
               >
               Sign Up
             </Button>
-            {isAuth===true?<Text display="flex" color="tomato">Username: {username}</Text>:""}
+            {isAuth===true?<Text display="flex" fontWeight="bold" alignItems="center" color="tomato">Welcome! <Text>{username}</Text></Text>:""}
             <Button display={isAuth==true?"flex":"none"} onClick={()=>{
               LogOut();
             }}>LogOut </Button>
@@ -269,7 +272,7 @@ import {
   const NAV_ITEMS = [
     {
       label: 'WOMEN',
-      href:"/",
+      href:"/women",
       
     },
     {

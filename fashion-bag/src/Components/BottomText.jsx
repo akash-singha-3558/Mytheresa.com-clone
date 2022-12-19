@@ -5,7 +5,7 @@ const BottomText=()=>{
 
     return(
 <>
-<Box w="79%" m="auto">
+<Box w="79%" m="auto" mt="10">
 <Center><Text fontFamily="Futura-Medium,Century Gothic,Gill Sans, Helvetica, Arial, sans-serif" fontWeight="400" fontSize="18px" >MYTHERESA – WOMEN’S LUXURY AND DESIGNER FASHION</Text></Center>
 <Center mt="5">
 <Text textAlign="left">

@@ -54,6 +54,10 @@ const HandleClick=(e)=>{
      
 }
 
+const direction = useNavigate();
+
+
+
 return(
 <>
 
@@ -103,7 +107,12 @@ return(
               </Button>
             </Stack>
           </Stack>
+          <Text color="teal" fontWeight="bold" onClick={()=>{
+            direction("/admin");
+          }} cursor="pointer">LogIn As Admin ?</Text>
+          
         </Box>
+        
       </Stack>
     </Flex>
   
