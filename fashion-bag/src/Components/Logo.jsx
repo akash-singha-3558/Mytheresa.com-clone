@@ -4,6 +4,7 @@ import { Center, color } from "@chakra-ui/react";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { Tooltip } from '@chakra-ui/react';
+import { useNavigate} from "react-router-dom";
 import {
     Popover,
     PopoverTrigger,
@@ -42,8 +43,9 @@ const counter={
     fontSize: '13px',
     fontWeight: '400'
 }
+const navigate=useNavigate();
 return(
-    <Flex w="95%" m="auto" mt="5">
+    <Flex w="95%" m="auto" mt="5" >
         <Box /* border="1px solid yellow"*/ width={{base:"100%",sm:"100%",md:"100%", lg: '60%',
     xl: '60%','2xl': '60%'}} display="flex" justifyContent={{base:"center",sm:"center",md:"center", lg: 'flex-end',
     xl: 'flex-end','2xl': 'flex-end'}} height="129.06px" >
@@ -60,10 +62,15 @@ return(
   
       <Tooltip label={!isAuth?`Your Cart Have ${cartcount} Items,
        You have to LogIn to add Item`:`Your Cart Have ${cartcount} Items`} placement='bottom-start' bg={"white"}color={"black"} padding="10" borderRadius="10" boxShadow={"1px 2px 9px #dbdbdb"}>
-      <Text>SHOPPING BAG</Text>
+      <Text onClick={()=>{
+        if(isAuth===true){
+          navigate("/cart");
+        }
+        
+      }}>SHOPPING BAG</Text>
     </Tooltip>
    
-      <SlHandbag style={{fontSize:"50px",marginTop:"-10px"}}/>
+      <SlHandbag style={{fontSize:"50px",marginTop:"-10px"}} />
       
     <Text position= 'absolute'
     top= '140px'
@@ -71,7 +78,7 @@ return(
     xl: '95%','2xl': '94.74%'}}
     paddingLeft='9px'
     fontSize='13px'
-    fontWeight='400' >{cartcount}</Text>
+    fontWeight='bold' >{cartcount}</Text>
     </Box>
 
 

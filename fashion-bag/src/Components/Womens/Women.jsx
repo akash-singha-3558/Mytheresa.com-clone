@@ -1,6 +1,6 @@
 import ItemBar from "../GlobalComponents/Itembar";
 import Logo from "../Logo";
-import Navbar2 from "../item2";
+
 import { Sale } from "./sale";
 import HeroImage1 from "./HeroImage1";
 import HeroImage2 from "./HeroImage2";

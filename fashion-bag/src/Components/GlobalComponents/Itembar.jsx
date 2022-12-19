@@ -10,8 +10,12 @@ const font={
 }
 return(
     <>
-<Box   display="flex" justifyContent={"space-around"} alignItems="center" mt="20"  width={"100%"} m={"auto"}>
-<Box display="flex" justifyContent="space-around"   width={"75%"} >
+<Box   display={{base:"none",sm: 'none',
+  md: 'none',
+  lg: 'flex',
+  xl: 'flex',
+  '2xl': 'flex',}} justifyContent={"space-around"} alignItems="center" mt="20"  width={"100%"} m={"auto"}>
+<Box display="flex" justifyContent="space-around"   width={"79%"} >
 <span style={font}> <Tooltip label="hi" aria-label='A tooltip' padding={"10"}>
 NEW ARRIVALS
 </Tooltip></span>
