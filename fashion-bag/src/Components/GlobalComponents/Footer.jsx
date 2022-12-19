@@ -36,7 +36,12 @@ return(
 <Box mt="5">
 <hr/>
 </Box>
-<Grid mt="5" justifyContent="center" templateColumns='repeat(5, 1fr)' gap={8}>
+
+<Grid mt="5" justifyContent="center" templateColumns={{base:"repeat(1, 1fr)",sm: 'repeat(1, 1fr)',
+  md: 'repeat(5, 1fr)',
+  lg: 'repeat(5, 1fr)',
+  xl: 'repeat(5, 1fr)',
+  '2xl': 'repeat(5, 1fr)',}} gap={8}>
 <GridItem textAlign="left"><Box ><Text fontFamily="Futura-Medium,Century Gothic, Gill Sans, Helvetica, Arial, sans-serif">SERVICE & SECURITY</Text></Box>
 <Box   fontFamily="Arial, Helvetica, sans-serif" mt="5" ><Text><span style={{color:"#979797"}}><CheckIcon/></span>&nbsp;Fast Delivery</Text>
 <Text color="#979797" cursor="pointer">Delivery within 2 business days</Text>

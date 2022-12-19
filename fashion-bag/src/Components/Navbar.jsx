@@ -22,11 +22,14 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  import {Link,NavLink} from "react-router-dom"
-
+  import {Link,NavLink,useNavigate} from "react-router-dom";
+  import { useContext } from 'react';
+  import { AuthContext } from '../Context/AuthContext';
   export default function Navbar() {
+    const {isAuth,LogOut,username}=useContext(AuthContext);
+
     const { isOpen, onToggle } = useDisclosure();
-  
+    const navigate= useNavigate();
     return (
       <Box>
         <Flex
@@ -72,11 +75,21 @@ import {
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
-              href={'#'}>
+              href={'#'} onClick={
+                ()=>{
+                  navigate("/signin");
+                 
+                }
+              
+              }
+               display={isAuth==false?"flex":"none"}
+
+              >
               Sign In
             </Button>
+            
             <Button
-              display={{ base: 'none', md: 'inline-flex' }}
+              display={isAuth==true?"none":{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
@@ -84,10 +97,19 @@ import {
               href={'#'}
               _hover={{
                 bg: 'pink.300',
-              }}>
+              }}  onClick={
+                ()=>{
+                  navigate("/signup");
+                }
+              }
+              
+              >
               Sign Up
             </Button>
-           
+            {isAuth===true?<Text display="flex" color="tomato">Username: {username}</Text>:""}
+            <Button display={isAuth==true?"flex":"none"} onClick={()=>{
+              LogOut();
+            }}>LogOut </Button>
           </Stack>
        
         </Flex>

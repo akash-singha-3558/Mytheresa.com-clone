@@ -1,6 +1,7 @@
 import {Grid,GridItem,Image,Text,Center,Box,Button,Divider} from "@chakra-ui/react";
 
 import {AiOutlineDoubleRight } from "react-icons/ai";
+import {Link} from "react-router-dom";
 const Cards08=()=>{
 
 return(
@@ -22,7 +23,7 @@ return(
 
 </Grid>
 <Box mt="10">
-<Button mt="10px" bg="black" color="white"_hover={{bg:"black"}}>SHOP NOW <AiOutlineDoubleRight/></Button>
+<Link to="/womensProduct"><Button mt="10px" bg="black" color="white"_hover={{bg:"black"}}>SHOP NOW <AiOutlineDoubleRight/></Button></Link>
 </Box>
 <Box  w="79%"  m="auto" mt="10" mb="10">
 <Divider orientation='horizontal' border="solid"/>
