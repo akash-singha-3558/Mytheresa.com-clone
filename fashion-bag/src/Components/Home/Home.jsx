@@ -5,41 +5,36 @@ import BottomText from "../BottomText";
 import Footer from "../GlobalComponents/Footer";
 import Carousal from "./Carousal";
 import Carousal2 from "./Carousal2";
+import SaleText from "../SaleText";
 const Home=()=>{
 const navigate=useNavigate();
 return(
 <>
 <Logo/>
-<Box m="auto" mt="5" w="79%"  h="535px" bgImage="url('https://img.mytheresa.com/media/static/raw/cms/l/Gate_page_upload_September_2022/Gatepage_Sep22_DSK_2x_20220908102600.jpg?imwidth=1180&imdensity=1')"  bgPosition="center"
-  bgRepeat="no-repeat" >
-
-<Flex fontSize="54px" color="white" alignItems="center" w="68%" justifyContent="space-between" m="auto" 
- h="100%" fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif">
-<Text cursor="pointer"
- onClick={()=>{
-navigate("/women")
-
-}}>Women</Text>
-<Text cursor="pointer" onClick={()=>{
-navigate("/men")
-
-}}>Men</Text>
-</Flex>
+<SaleText/>
+<Box m="auto" mt="5" w="79%"  h="1000%"  
+   position="relative"  color="white"   >
+<Image src="https://img.mytheresa.com/media/static/raw/cms/l/Gate_page_upload_September_2022/Gatepage_Sep22_DSK_2x_20220908102600.jpg?imwidth=1180&imdensity=1" w="100%"/> 
+<Box fontSize={{base:"",sm:"",md:"40px",lg:"54px",xl:"54px","2xl":"54px"}} fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif"><Link to="/women"><Text position="absolute" top="44%" left="20%">Women</Text>
+</Link>
+<Link to="/men"><Text position="absolute" top="44%" right="20%">Men</Text></Link>
+</Box>
 </Box>
 
-<Box m="auto" mt="5" w="79%"  h="360px" bgImage="url('https://img.mytheresa.com/media/static/raw/cms/l/Gate_page_upload_September_2022/Gatepage_Sep22_KIDS_DSK_2x_20220908102616.jpg?imwidth=1180&imdensity=1')"  bgPosition="center"
-  bgRepeat="no-repeat" >
-<Flex w="100%" h="100%"justifyContent="center" alignItems="center" color="white">
- <Link to ="/kids">  <Text fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif" fontSize="54px">Kids</Text></Link>
-</Flex>
+<Box m="auto" mt="5" w="79%" position="relative" color="white" h="1000%" opacity="0.5 green"  fontSize={{base:"",sm:"20px",md:"30px",lg:"54px",xl:"54px","2xl":"54px"}}  fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif"
+  bg="black" >
+    <Image opacity="0.8" src="https://img.mytheresa.com/media/static/raw/cms/l/Gate_page_upload_September_2022/Gatepage_Sep22_KIDS_DSK_2x_20220908102616.jpg?imwidth=1180&imdensity=1"/>
+   <Link to="/kid"><Text position="absolute" left="45%" top="40%">Kids</Text></Link> 
+
+</Box>
+<Box m="auto" mt="5" w="79%" bg="black" position="relative" color="white" h="1000%"  fontSize={{base:"",sm:"20px",md:"30px",lg:"54px",xl:"54px","2xl":"54px"}}  fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif"
+   >
+    <Image src="https://img.mytheresa.com/media/static/raw/cms/l/Gate_page_upload_September_2022/Gatepage_Sep22_LIFE_DSK_2x_20220908102608.jpg?imwidth=1180&imdensity=1" opacity="0.8"/>
+  <Link to="/life"><Text position="absolute" left="45%" top="40%">Life</Text></Link> 
+
 </Box>
 
-<Box m="auto" mt="5" w="79%"  h="360px" bgImage="url('https://img.mytheresa.com/media/static/raw/cms/l/Gate_page_upload_September_2022/Gatepage_Sep22_LIFE_DSK_2x_20220908102608.jpg?imwidth=1180&imdensity=1')"  bgPosition="center"
-  bgRepeat="no-repeat" >
-<Flex w="100%" h="100%"justifyContent="center" alignItems="center" color="white">
-<Link to ="/life">  <Text fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif" fontSize="54px">Life</Text></Link>
-</Flex>
-</Box>
+
 <Flex w="79%" m="auto" alignItems="center" justifyContent="center"  mt="10" mb="10">
 <Center><Text fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif" fontSize="30px">Women's New Arrivals</Text></Center>
 </Flex>

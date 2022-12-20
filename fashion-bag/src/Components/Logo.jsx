@@ -38,7 +38,7 @@ const div1={
 const counter={
     position: 'absolute',
     top: '140px',
-    left: '94.74%',
+    left: '95%',
     paddingLeft: '9px',
     fontSize: '13px',
     fontWeight: '400'
@@ -77,8 +77,8 @@ return(
       
     <Text position= 'absolute'
     top= '140px'
-    left={{lg: '93.5%',
-    xl: '95%','2xl': '95%'}}
+    left={{lg: '94.74%',
+    xl: '94.74%','2xl': '94.74%'}}
     paddingLeft='9px'
     fontSize='13px'
     fontWeight='bold' >{cartcount}</Text>

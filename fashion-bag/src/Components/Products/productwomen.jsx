@@ -28,7 +28,11 @@ return(
 <Logo/>
 <Sale/>
 <SaleText/>
-<Flex m="auto" flexDirection={{base:"row"}} mt="10" mb="10">
+<Flex m="auto" flexDirection={{base:'column',sm: 'column',
+  md: 'column',
+  lg: "row",
+  xl: "row",
+  '2xl': "row",}} mt="10" mb="10">
 <Box w="20%"  ml="10"  >
     <Text  fontFamily="Futura-Medium,Century Gothic,Gill Sans, Helvetica, Arial, sans-serif" fontSize="20px">Sort By Price</Text>
 <Button bg="black" color="white" mt="5" _hover={{bg:"teal"}} onClick={()=>{
@@ -72,7 +76,7 @@ return(
 
 </Box>
 <Box w="70%" m="auto" > 
-<Grid templateColumns={{base:'repeat(2,1fr)',sm: 'repeat(2,1fr)',
+<Grid templateColumns={{base:'repeat(2,1fr)',sm: 'repeat(1,1fr)',
   md: 'repeat(2,1fr)',
   lg: "repeat(3,1fr)",
   xl: "repeat(3,1fr)",
