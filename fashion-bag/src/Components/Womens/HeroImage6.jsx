@@ -5,7 +5,7 @@ const HeroImage6=()=>{
 return(
     <>
 <Grid  templateColumns={{base:"repeat(1,1fr)",sm:"repeat(1,1fr)",md:"repeat(1,1fr)", lg: "repeat(2,1fr)", 
-    xl: "repeat(2,1fr)",'2xl': "repeat(2,1fr)"}} gap="6"  width="79%" m="auto" fontFamily="Futura-Medium, Century Gothic, Gill Sans, Helvetica, Arial, sans-serif">
+    xl: "repeat(2,1fr)",'2xl': "repeat(2,1fr)"}} gap="6"  width="79%" m="auto" mt="20" fontFamily="Futura-Medium, Century Gothic, Gill Sans, Helvetica, Arial, sans-serif">
 
 <GridItem><Image src={"https://img.mytheresa.com/media/static/raw/cms/l/WW_HP_2022_CW50/CW50_WW_HP_ActboxSmall_1_2x_20221212110608.jpg?imwidth=600&imdensity=1"}/>
 <Center> <Button mt="30px" mb="30px" bg="black" color="white"_hover={{bg:"black"}}>SHOP NOW <AiOutlineDoubleRight/></Button></Center>

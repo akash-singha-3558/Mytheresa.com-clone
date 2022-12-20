@@ -7,7 +7,7 @@ import SaleText from "../SaleText";
 import BottomText from "../BottomText";
 import Footer from "../GlobalComponents/Footer";
 import Logo from "../Logo";
-const MenProducts=()=>{
+const WomenProducts=()=>{
 const[data,setData]=useState([]);
 const [cdata,setCdata]=useState([]);
 useEffect(()=>{
@@ -26,14 +26,26 @@ async function getData() {
 return(
 <>
 <Logo/>
-<Sale/>
+
 <SaleText/>
-<Flex  flexDirection={{base:'column',sm: 'column',
+<Flex m="auto" flexDirection={{base:'column',sm: 'column',
   md: 'column',
   lg: "row",
   xl: "row",
-  '2xl': "row",}} mt="10" mb="10" >
-<Box w="20%"  ml="10" >
+  '2xl': "row",}} mt="10" mb="10">
+<Box w={{base:'100%',sm: '100%',
+  md: '100%',
+  lg: "20%",
+  xl: "20%",
+  '2xl': "20%",}}    p="10" position="fixed" top={{base:'0px',sm: '0px',
+  md: '0px',
+  lg: "290px",
+  xl: "290px",
+  '2xl': "290px",}} bg="white" zIndex={{base:'5',sm: '5',
+  md: 5,
+  lg: 0,
+  xl: 0,
+  '2xl': "0",}}  >
     <Text  fontFamily="Futura-Medium,Century Gothic,Gill Sans, Helvetica, Arial, sans-serif" fontSize="20px">Sort By Price</Text>
 <Button bg="black" color="white" mt="5" _hover={{bg:"teal"}} onClick={()=>{
   let newdata1= data.sort((a,b)=>Number(b.price)-Number(a.price));
@@ -75,18 +87,26 @@ return(
 }}>  Z to A</Button>
 
 </Box>
-<Box w="70%" m="auto" ml="10" > 
-<Grid templateColumns={{base:'repeat(2,1fr)',sm: 'repeat(2,1fr)',
+<Box w={{base:'100%',sm: '100%',
+  md: '100%',
+  lg: "80%",
+  xl: "80%",
+  '2xl': "80%",}} m="auto" p="10" ml= {{base:'0',sm: '0',
+  md: '0',
+  lg: "250px",
+  xl: "250px",
+  '2xl': "250px",}} mt={{base:"100",sm:"100",md:"100",lg:0,xl:0,"2xl":0}} > 
+<Grid templateColumns={{base:'repeat(1,1fr)',sm: 'repeat(1,1fr)',
   md: 'repeat(2,1fr)',
   lg: "repeat(3,1fr)",
   xl: "repeat(3,1fr)",
-  '2xl': "repeat(3,1fr)",}} gap="6">
+  '2xl': "repeat(3,1fr)",}} gap="6" >
 {
 
 
 
-cdata.length===0?data.map((el,i)=>(
-    <GridItem key={i}>  <ProductCard key={i} image_url={el.image_url} name={el.name} description={el.description} price={el.price}
+cdata.length===0?data.map((el)=>(
+    <GridItem key={el.name}>  <ProductCard key={el.name} image_url={el.image_url} name={el.name} description={el.description} price={el.price}
       strikedoffprice={el.strikedoffprice}
       /></GridItem>
   )):cdata.map((el)=>(
@@ -100,7 +120,7 @@ cdata.length===0?data.map((el,i)=>(
 </Grid>
 </Box>
 </Flex>
-<BottomText/>
+<BottomText />
 <Footer/>
 </>
 
@@ -113,4 +133,4 @@ cdata.length===0?data.map((el,i)=>(
 
 }
 
-export default MenProducts;
+export default WomenProducts;

@@ -71,7 +71,7 @@ function Carousal1() {
 
 
   return (
-    <div className="Karu" style={{ backgroundColor:"#865e3e",width:"79%",margin:"auto", marginTop:"20px",padding:"30px",boxSizing:"border-box"}}>
+    <div className="Karu" style={{ backgroundColor:"#865e3e",width:"79%",margin:"auto", marginTop:"30px",padding:"30px",boxSizing:"border-box"}}>
       <Slider {...settings}>
         {getData.map((item) => (
           <div className="card" >

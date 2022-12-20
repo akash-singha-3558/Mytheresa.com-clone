@@ -7,7 +7,7 @@ import Carousal from "./Carousal";
 import Carousal2 from "./Carousal2";
 import SaleText from "../SaleText";
 const Home=()=>{
-const navigate=useNavigate();
+
 return(
 <>
 <Logo/>
@@ -17,14 +17,14 @@ return(
 <Image src="https://img.mytheresa.com/media/static/raw/cms/l/Gate_page_upload_September_2022/Gatepage_Sep22_DSK_2x_20220908102600.jpg?imwidth=1180&imdensity=1" w="100%"/> 
 <Box fontSize={{base:"",sm:"",md:"40px",lg:"54px",xl:"54px","2xl":"54px"}} fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif"><Link to="/women"><Text position="absolute" top="44%" left="20%">Women</Text>
 </Link>
-<Link to="/men"><Text position="absolute" top="44%" right="20%">Men</Text></Link>
+<Link to="/man"><Text position="absolute" top="44%" right="20%">Men</Text></Link>
 </Box>
 </Box>
 
 <Box m="auto" mt="5" w="79%" position="relative" color="white" h="1000%" opacity="0.5 green"  fontSize={{base:"",sm:"20px",md:"30px",lg:"54px",xl:"54px","2xl":"54px"}}  fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif"
   bg="black" >
     <Image opacity="0.8" src="https://img.mytheresa.com/media/static/raw/cms/l/Gate_page_upload_September_2022/Gatepage_Sep22_KIDS_DSK_2x_20220908102616.jpg?imwidth=1180&imdensity=1"/>
-   <Link to="/kid"><Text position="absolute" left="45%" top="40%">Kids</Text></Link> 
+   <Link to="/kids"><Text position="absolute" left="45%" top="40%">Kids</Text></Link> 
 
 </Box>
 <Box m="auto" mt="5" w="79%" bg="black" position="relative" color="white" h="1000%"  fontSize={{base:"",sm:"20px",md:"30px",lg:"54px",xl:"54px","2xl":"54px"}}  fontFamily="Futura-Medium,Century Gothic,Gill Sans,Helvetica,Arial,sans-serif"

@@ -7,7 +7,7 @@ const {AddToCart,isAuth}=useContext(AuthContext);
 const navigate= useNavigate();
 return(
 <>
-<Box w="300px" h="auto" >
+<Box w="300px" h="auto" m="auto">
 <Image src={image_url}/>
 <Center><Text mt="5" fontFamily="Futura-Medium,Century Gothic,Gill Sans, Helvetica, Arial, sans-serif" lineHeight="20px">{name.toUpperCase()}</Text></Center>
 <Center><Text fontFamily="Arial, Helvetica, sans-serif">{description}</Text></Center>

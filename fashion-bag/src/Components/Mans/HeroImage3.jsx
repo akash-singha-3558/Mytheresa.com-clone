@@ -17,7 +17,7 @@ return(
   '2xl': 'row',}}>
 
 <Box  w="50%" h="100%" >
-<Image src="https://img.mytheresa.com/media/static/raw/cms/l/MW_HP_2022_CW49/BIG3/EN_ACTBOX1_DESKTOP_2x_20221205114710.jpg?imwidth=1180&imdensity=1"/>
+<Image w="100%" h="100%" src="https://img.mytheresa.com/media/static/raw/cms/l/MW_HP_2022_CW49/BIG3/EN_ACTBOX1_DESKTOP_2x_20221205114710.jpg?imwidth=1180&imdensity=1"/>
 </Box>
 <Box w="50%" bg="black" h="100%">
 <Text textAlign="left" mt="40" ml="20" fontSize="54px" lineheight="65px" fontFamily="Futura-Medium, Century Gothic,Gill Sans, Helvetica, Arial, sans-serif" color="white" 
