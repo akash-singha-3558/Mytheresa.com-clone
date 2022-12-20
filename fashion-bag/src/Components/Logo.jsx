@@ -78,7 +78,7 @@ return(
     <Text position= 'absolute'
     top= '140px'
     left={{lg: '93.5%',
-    xl: '95%','2xl': '94.74%'}}
+    xl: '95%','2xl': '95%'}}
     paddingLeft='9px'
     fontSize='13px'
     fontWeight='bold' >{cartcount}</Text>

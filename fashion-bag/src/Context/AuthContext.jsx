@@ -152,7 +152,7 @@ CartCounter();
 const AdminLogIn=async (obj)=>{
   try {
     const response = await axios.get('https://thankful-loafers-hare.cyclic.app/admin');
-    console.log(response.data[0].email);
+    
    for(let i=0;i<response.data.length;i++){
     if(response.data[i].email==obj.email && response.data[i].password==obj.password ){
       setIsAuth(true);
@@ -163,7 +163,7 @@ const AdminLogIn=async (obj)=>{
         status: "success",
         isClosable: true,
       })
-      navigate("/");
+      navigate("/admindashboard");
       return true;
     }
     else{

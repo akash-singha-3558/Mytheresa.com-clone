@@ -4,14 +4,16 @@ import Logo from "../Logo";
 import ItemCart from "./ItemCart";
 import { useContext,useEffect ,useState} from "react";
 import { AuthContext } from "../../Context/AuthContext";
-
+import { useToast } from '@chakra-ui/react';
+import { useNavigate } from "react-router-dom";
 const Cart=()=>{
+  const {navigate}=useNavigate();
 const{cartData,total,CartCounter,DeleteCart}=useContext(AuthContext);
 const [del,selDel]=useState(40);
 useEffect(()=>{
 CartCounter();
 },[cartData])
-
+const toast = useToast()
 return(
 <>
 <Logo/>
@@ -50,15 +52,23 @@ fontSize="18px"
 textAlign="left" fontWeight="bold">Delivery :</Text> <span style={{color:"tomato",fontWeight:"bold"}}>{`€${del}`} </span></Flex>
  <Flex justifyContent="space-between"><Button  bg="teal" color="white" _hover={{bg:"black"}} display="flex" onClick={()=>{
 setTimeout(()=>{
-alert("Your Product Will be delivered shortly");
+  toast({
+    position:"top",
+    title: 'Order Placed!',
+    description: "Your Product will be delivered shortly!",
+    status: 'success',
+    duration: 9000,
+    isClosable: true,
+  })
 go();
+
 },3000)
 function go(){
     for(let i=0;i<cartData.length;i++)
     {
      DeleteCart(cartData[i].id);
     }
-
+    navigate("/");
 }
 
 

@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute/privateroute";
 import Cart from "./Cart/cart";
 import Home from "./Home/Home";
 import AdminLogin from "./Admin/AdminLogIn";
+import AdminDashboard from "./Admin/AdminDashboard";
 const AllRoutes=()=>{
 
 return(
@@ -26,6 +27,7 @@ return(
  <Route path="/signup" element={<SignUp/>}></Route>
  <Route path="/cart" element={<PrivateRoute><Cart/></PrivateRoute>}></Route>
  <Route path="/admin" element={<AdminLogin/>}></Route>
+ <Route path="/admindashboard" element={<PrivateRoute><AdminDashboard/></PrivateRoute>}></Route>
 </Routes>
 
 )
