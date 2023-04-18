@@ -9,7 +9,6 @@ This features of this project are :
 
 Fully functional Mega-menu from the Navbar
 Signup & Login Functionality which stores your data
-Admin Login and Admin Dashboard that adds products to the main website
 Complete Navbar & Footer implemented using Import/Export functionality
 Different pages for both Men and Womens section of the shop
 All shop pages includes Choice of size, Filtering and Sorting techniques
